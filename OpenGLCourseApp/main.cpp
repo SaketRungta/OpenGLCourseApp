@@ -5,10 +5,14 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 800;
 
-GLuint VAO, VBO, shaderProgram, uniformXMove;
+GLuint VAO, VBO, shaderProgram, uniformModel;
 
 bool direction = false;
 float triOffset = 0.f, triMaxOffset = 0.5f, triIncrement = 0.002f;
@@ -20,11 +24,11 @@ static const char* vShader = "									\n\
 																\n\
 layout (location = 0) in vec3 pos;								\n\
 																\n\
-uniform float xMove;																\n\
+uniform mat4 model;																\n\
 																\n\
 void main()														\n\
 {																\n\
-	gl_Position = vec4(0.4 * pos.x + xMove, 0.4 * pos.y - xMove, 0.4 * pos.z, 1.0);				\n\
+	gl_Position = model * vec4(0.4 * pos.x, 0.4 * pos.y, 0.4 * pos.z, 1.0);				\n\
 }";
 
 // Fragment shader
@@ -148,7 +152,7 @@ void CompileShader()
 		return;
 	}
 
-	uniformXMove = glGetUniformLocation(shaderProgram, "xMove");
+	uniformModel = glGetUniformLocation(shaderProgram, "model");
 }
 
 void CreateTraiangle()
@@ -325,7 +329,29 @@ int main()
 		// Go to the graphics card and use this shader program
 		glUseProgram(shaderProgram);
 
-		glUniform1f(uniformXMove, triOffset);
+		// Gives you an identity matrix with diagonals being 1
+		glm::mat4 model(1.f);
+
+		/*
+		* How translation works in 3D
+		* We have an identity matrix and we have vector which says how much in xyz direction we have to move our model 
+		* So we call glm tranlate to calculate the matrix which we can multiply to our vector position to change its position to what its supposed to be
+		* What glm::translate does?
+		* |1 0 0 0|   |X|   |1 0 0 X|
+		* |0 1 0 0| . |Y| = |0 1 0 Y|
+		* |0 0 1 0|	  |Z|   |0 0 1 Z|
+		* |0 0 0 1|   |1|   |0 0 0 1|
+		* glm::translate gives us this matrix which wehn multiplied with our vector location will translate it to the position we want it to be
+		* Multiplying the translated matrix to our position vector in the vertex shader gives us the translated vector
+		* |1 0 0 X|   |x|   |x + X|
+		* |0 1 0 Y| . |y| = |y + Y|
+		* |0 0 1 Z|	  |z|   |z + Z|
+		* |0 0 0 1|   |1|   |  1  |
+		* This is how translation is being performed via matrices and vectors
+		*/
+		model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.f));
+
+		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 
 		// We are binding this VAO, basically we are saying that we are working with this VAO
 		glBindVertexArray(VAO);
