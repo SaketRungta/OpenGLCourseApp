@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <cmath>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -7,7 +8,10 @@
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 800;
 
-GLuint VAO, VBO, shaderProgram;
+GLuint VAO, VBO, shaderProgram, uniformXMove;
+
+bool direction = false;
+float triOffset = 0.f, triMaxOffset = 0.5f, triIncrement = 0.002f;
 
 // Vertex shader
 // layout (location = 0) in vec3 pos; here location zero represents the lower attribute pointer location
@@ -16,9 +20,11 @@ static const char* vShader = "									\n\
 																\n\
 layout (location = 0) in vec3 pos;								\n\
 																\n\
+uniform float xMove;																\n\
+																\n\
 void main()														\n\
 {																\n\
-	gl_Position = vec4(pos.x, pos.y, pos.z, 1.0);				\n\
+	gl_Position = vec4(0.4 * pos.x + xMove, 0.4 * pos.y - xMove, 0.4 * pos.z, 1.0);				\n\
 }";
 
 // Fragment shader
@@ -141,6 +147,8 @@ void CompileShader()
 		printf("Error validating shader program: '%s'\n", eLog);
 		return;
 	}
+
+	uniformXMove = glGetUniformLocation(shaderProgram, "xMove");
 }
 
 void CreateTraiangle()
@@ -303,6 +311,11 @@ int main()
 		// Get + handle user input events, checks if any events happened like keyboard presses, mouse movements, moving the window and resizing; If not called we cant close or resize or do any such functionality
 		glfwPollEvents();
 
+		if (direction)triOffset += triIncrement;
+		else triOffset -= triIncrement;
+
+		if (abs(triOffset) >= triMaxOffset)direction = !direction;
+
 		// Clear the window
 		glClearColor(1.f, 1.f, 0.f, 0.75f);
 		glClear(GL_COLOR_BUFFER_BIT); // Clear the color data
@@ -311,6 +324,8 @@ int main()
 		
 		// Go to the graphics card and use this shader program
 		glUseProgram(shaderProgram);
+
+		glUniform1f(uniformXMove, triOffset);
 
 		// We are binding this VAO, basically we are saying that we are working with this VAO
 		glBindVertexArray(VAO);
