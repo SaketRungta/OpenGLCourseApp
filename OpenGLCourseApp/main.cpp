@@ -11,11 +11,21 @@
 
 // Window Dimensions
 const GLint WIDTH = 800, HEIGHT = 800;
+const float toRadians = 3.14159265f / 180.f;
 
 GLuint VAO, VBO, shaderProgram, uniformModel;
 
-bool direction = false;
-float triOffset = 0.f, triMaxOffset = 0.5f, triIncrement = 0.002f;
+bool direction = true;
+float triOffset = 0.f;
+float triMaxOffset = 0.5f;
+float triIncrement = 0.002f;
+
+float currAngle = 0.f;
+
+bool sizeDirection = true;
+float currSize = 0.4f;
+float maxSize = 0.8f;
+float minSize = 0.1f;
 
 // Vertex shader
 // layout (location = 0) in vec3 pos; here location zero represents the lower attribute pointer location
@@ -320,6 +330,14 @@ int main()
 
 		if (abs(triOffset) >= triMaxOffset)direction = !direction;
 
+		currAngle += 0.5f;
+		if (currAngle >= 360.f)currAngle -= 360.f;
+
+		if (sizeDirection)currSize += 0.001f;
+		else currSize -= 0.001f;
+
+		if (currSize >= maxSize || currSize <= minSize)sizeDirection = !sizeDirection;
+
 		// Clear the window
 		glClearColor(1.f, 1.f, 0.f, 0.75f);
 		glClear(GL_COLOR_BUFFER_BIT); // Clear the color data
@@ -341,7 +359,7 @@ int main()
 		* |0 1 0 0| . |Y| = |0 1 0 Y|
 		* |0 0 1 0|	  |Z|   |0 0 1 Z|
 		* |0 0 0 1|   |1|   |0 0 0 1|
-		* glm::translate gives us this matrix which wehn multiplied with our vector location will translate it to the position we want it to be
+		* glm::translate gives us this matrix which when multiplied with our vector position will translate it to the position we want it to be
 		* Multiplying the translated matrix to our position vector in the vertex shader gives us the translated vector
 		* |1 0 0 X|   |x|   |x + X|
 		* |0 1 0 Y| . |y| = |y + Y|
@@ -349,7 +367,53 @@ int main()
 		* |0 0 0 1|   |1|   |  1  |
 		* This is how translation is being performed via matrices and vectors
 		*/
-		model = glm::translate(model, glm::vec3(triOffset, triOffset, 0.f));
+		model = glm::translate(model, glm::vec3(triOffset, 0.f, 0.f));
+
+		/*
+		* Rotating the matrix in xyz directions involves using different matrix for each operation
+		* The matrices are listed below:
+		* X rotation:
+		* |1   0       0    0|   |x|   |         x         |
+		* |0 cos(A) -sin(A) 0| . |y| = |cos(A).y - sin(A).z|
+		* |0 sin(A) cos(A)  0|	 |z|   |sin(A).y + cos(A).z|
+		* |0   0       0    1|   |1|   |         1         |
+		* 
+		* Y rotation:
+		* |cos(A)  0 sin(A) 0|   |x|   |cos(A).x  + sin(A).z|
+		* |  0     1   0    0| . |y| = |          y         |
+		* |-sin(A) 0 cos(A) 0|	 |z|   |-sin(A).x + cos(A).z|
+		* |  0     0   0    1|   |1|   |          1         |
+		* 
+		* Z rotation:
+		* |cos(A) -sin(A) 0 0|   |x|   |cos(A).x - sin(A).y|
+		* |sin(A)  cos(A) 0 0| . |y| = |sin(A).x + cos(A).y|
+		* |  0       0    1 0|	 |z|   |         z         |
+		* |  0       0    0 1|   |1|   |         1         |
+		* 
+		* We will only require to multiply the returned matrix to our vector positions
+		*/
+		model = glm::rotate(model, currAngle * toRadians, glm::vec3(0.f, 0.f, 1.f));
+
+		/*
+		* How scaling works in 3D
+		* We have an identity matrix and we have vector which says how much in xyz direction we have to scale our model
+		* So we call glm scale to calculate the matrix which we can multiply to our vector position to change its position to what its supposed to be when scaled
+		* What glm::scale does?
+		* |1 0 0 0|   |SX|   |SX 0 0 1|
+		* |0 1 0 0| . |SY| = |0 SY 0 1|
+		* |0 0 1 0|	  |SZ|   |0 0 SZ 1|
+		* |0 0 0 1|   |1|	 |0 0  0 1|
+		* glm::scale gives us this matrix which when multiplied with our vector position will scale it to the position we want it to be
+		* Multiplying the scaled matrix to our position vector in the vertex shader gives us the scaled vector
+		* |SX 0 0 1|   |x|   |SX.x|
+		* |0 SY 0 1| . |y| = |SY.y|
+		* |0 0 SZ 1|   |z|   |SZ.z|
+		* |0 0  0 1|   |1|   |  1 |
+		* This is how scaling is being performed via matrices and vectors
+		*/
+		model = glm::scale(model, glm::vec3(currSize, currSize, 0.f));
+		
+		// IMP: the order in which we execute the commands is very important if we scale first the we will be scaling the world along with it and triangle will clip out of the window, if we rotate then translate we will be rotating the origin as well
 
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 
