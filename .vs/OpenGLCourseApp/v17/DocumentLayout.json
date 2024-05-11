@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
+              "RelativeDocumentMoniker": "OpenGLCourseApp\\main.cpp",
+              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
+              "RelativeToolTip": "OpenGLCourseApp\\main.cpp",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAHUAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-03T07:31:02.275Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
