@@ -1,2 +1,8 @@
 ﻿  main.cpp
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.h(18,10): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.h(22,10): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+  (compiling source file 'main.cpp')
+  
   OpenGLCourseApp.vcxproj -> C:\Users\mails\Documents\GitHub\OpenGLCourseApp\Debug\OpenGLCourseApp.exe
