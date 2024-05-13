@@ -1,8 +1,14 @@
-﻿  main.cpp
+﻿  Window.cpp
 C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.h(18,10): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
-  (compiling source file 'main.cpp')
+  (compiling source file 'Window.cpp')
   
 C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.h(22,10): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
-  (compiling source file 'main.cpp')
+  (compiling source file 'Window.cpp')
   
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(136,22): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(137,22): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(141,28): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(142,28): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(144,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\Window.cpp(145,21): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
   OpenGLCourseApp.vcxproj -> C:\Users\mails\Documents\GitHub\OpenGLCourseApp\Debug\OpenGLCourseApp.exe
