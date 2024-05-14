@@ -14,11 +14,17 @@
 #include "Mesh.h"
 #include "Shader.h"
 #include "Window.h"
+#include "Camera.h"
 
 Window mainWindow;
 
 std::vector<std::unique_ptr<Mesh>> meshList;
 std::vector<Shader> shaderList;
+
+Camera camera;
+
+GLfloat deltaTime = 0.f;
+GLfloat lastTime = 0.f;
 
 const float toRadians = 3.14159265f / 180.f;
 
@@ -80,53 +86,70 @@ int main()
 	createObjects();
 	createShaders();
 
+	camera = Camera(glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f), -90.f, 0.f, 5.f, 0.1f);
+
 	GLuint uniformProjection = 0;
 	GLuint uniformModel = 0;
+	GLuint uniformView = 0;
 
 	glm::mat4 projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.f);
 
 	while (!mainWindow.getShouldClose())
 	{
+		GLfloat now = glfwGetTime();
+		deltaTime = now - lastTime;
+		lastTime = now;
+
 		glfwPollEvents();
 
-		if (direction)
-			triOffset += triIncrement;
-		else
-			triOffset -= triIncrement;
+		camera.keyControl(mainWindow.getKeys(), deltaTime);
+		camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 
-		if (abs(triOffset) >= triMaxOffset)
-			direction = !direction;
+		/*
+		{
+			if (direction)
+				triOffset += triIncrement;
+			else
+				triOffset -= triIncrement;
 
-		if (sizeDirectiion)
-			currSize += 0.001f;
-		else
-			currSize -= 0.001f;
+			if (abs(triOffset) >= triMaxOffset)
+				direction = !direction;
 
-		if (currSize >= maxSize || currSize <= minSize)
-			sizeDirectiion = !sizeDirectiion;
+			if (sizeDirectiion)
+				currSize += 0.001f;
+			else
+				currSize -= 0.001f;
 
-		currAngle += 0.1f;
-		if (currAngle >= 360.f)
-			currAngle -= 360.f;
+			if (currSize >= maxSize || currSize <= minSize)
+				sizeDirectiion = !sizeDirectiion;
+
+			currAngle += 0.1f;
+			if (currAngle >= 360.f)
+				currAngle -= 360.f;
+
+		}
+		*/
 
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		shaderList[0].useShader();
-		uniformModel = shaderList[0].GetModelLocation();
-		uniformProjection = shaderList[0].GetProjectionLocation();
+		uniformModel = shaderList[0].getModelLocation();
+		uniformProjection = shaderList[0].getProjectionLocation();
+		uniformView = shaderList[0].getViewLocation();
 
 		glm::mat4 model(1.f);
 		
-		model = glm::translate(model, glm::vec3(triOffset, 0.2f, -2.5f));
+		model = glm::translate(model, glm::vec3(0.f, 1.f, -5.f));
 		model = glm::rotate(model, currAngle * toRadians, glm::vec3(0.f, 2.5f, 0.f));
 		model = glm::scale(model, glm::vec3(0.4f, 1.f, 0.4f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
+		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		meshList[0]->renderMesh();
 
 		model = glm::mat4(1.f);
-		model = glm::translate(model, glm::vec3(-triOffset, -1.f, -2.5f));
+		model = glm::translate(model, glm::vec3(0.f, -1.f, -5.f));
 		model = glm::rotate(model, currAngle * toRadians, glm::vec3(0.f, 2.5f, 0.f));
 		model = glm::scale(model, glm::vec3(0.4f, 1.f, 0.4f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
