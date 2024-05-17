@@ -15,11 +15,11 @@ public:
 
 	GLfloat getBufferWidth()
 	{
-		return bufferWidth;
+		return (GLfloat)bufferWidth;
 	}
 	GLfloat getBufferHeight()
 	{
-		return bufferHeight;
+		return (GLfloat)bufferHeight;
 	}
 
 	bool getShouldClose()

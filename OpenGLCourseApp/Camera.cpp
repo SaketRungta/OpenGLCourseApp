@@ -56,8 +56,6 @@ glm::mat4 Camera::calculateViewMatrix()
 
 void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 {
-	printf("X: %f, Y: %f\n", xChange, yChange);
-
 	xChange *= turnSpeed;
 	yChange *= turnSpeed;
 

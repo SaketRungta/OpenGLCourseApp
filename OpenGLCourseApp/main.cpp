@@ -1,3 +1,5 @@
+#define STB_IMAGE_IMPLEMENTATION
+
 #include <stdio.h>
 #include <string.h>
 #include <cmath>
@@ -15,6 +17,7 @@
 #include "Shader.h"
 #include "Window.h"
 #include "Camera.h"
+#include "Texture.h"
 
 Window mainWindow;
 
@@ -22,6 +25,9 @@ std::vector<std::unique_ptr<Mesh>> meshList;
 std::vector<Shader> shaderList;
 
 Camera camera;
+
+Texture brickTexture;
+Texture dirtTexture;
 
 GLfloat deltaTime = 0.f;
 GLfloat lastTime = 0.f;
@@ -51,11 +57,12 @@ static const char* fShader = "Shaders/shader.frag";
 void createObjects()
 {
 	GLfloat vertices[] = {
-		-1.f,  0.f,  1.f,
-		 1.f,  0.f,  1.f,
-		 1.f,  0.f, -1.f,
-		-1.f,  0.f, -1.f,
-		 0.f,  1.f,  0.f
+	//	  x		 y	    z      u      v
+		-1.0f,  0.0f,  1.0f,  0.0f,  0.0f,
+		 1.0f,  0.0f,  1.0f,  1.0f,  0.0f,
+		 1.0f,  0.0f, -1.0f,  1.0f,  1.0f,
+		-1.0f,  0.0f, -1.0f,  0.0f,  1.0f,
+		 0.0f,  1.0f,  0.0f,  0.5f,  1.0f
 	};
 
 	unsigned int indices[] = {
@@ -67,8 +74,8 @@ void createObjects()
 		0, 2, 3
 	};
 
-	meshList.push_back(std::make_unique<Mesh>(vertices, indices, 15, 18));
-	meshList.push_back(std::make_unique<Mesh>(vertices, indices, 15, 18));
+	meshList.push_back(std::make_unique<Mesh>(vertices, indices, 25, 18));
+	meshList.push_back(std::make_unique<Mesh>(vertices, indices, 25, 18));
 }
 
 void createShaders()
@@ -87,7 +94,13 @@ int main()
 	createShaders();
 
 	camera = Camera(glm::vec3(0.f, 0.f, 0.f), glm::vec3(0.f, 1.f, 0.f), -90.f, 0.f, 5.f, 0.1f);
+	
+	brickTexture = Texture((char*)"Textures/brick.png");
+	brickTexture.loadTexture();
 
+	dirtTexture = Texture((char*)"Textures/dirt.png");
+	dirtTexture.loadTexture();
+	
 	GLuint uniformProjection = 0;
 	GLuint uniformModel = 0;
 	GLuint uniformView = 0;
@@ -96,7 +109,7 @@ int main()
 
 	while (!mainWindow.getShouldClose())
 	{
-		GLfloat now = glfwGetTime();
+		GLfloat now = (GLfloat)glfwGetTime();
 		deltaTime = now - lastTime;
 		lastTime = now;
 
@@ -146,6 +159,7 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
+		brickTexture.useTexture();
 		meshList[0]->renderMesh();
 
 		model = glm::mat4(1.f);
@@ -153,6 +167,7 @@ int main()
 		model = glm::rotate(model, currAngle * toRadians, glm::vec3(0.f, 2.5f, 0.f));
 		model = glm::scale(model, glm::vec3(0.4f, 1.f, 0.4f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
+		dirtTexture.useTexture();
 		meshList[1]->renderMesh();
 
 		glUseProgram(0);

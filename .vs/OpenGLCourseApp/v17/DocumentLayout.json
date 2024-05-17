@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Mesh.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Mesh.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2B8AC0CB-18C0-4565-B0C1-92390CF6155F}|OpenGLCourseApp\\OpenGLCourseApp.vcxproj|solutionrelative:OpenGLCourseApp\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Mesh.h",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.h",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Mesh.h",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.h",
-              "RelativeToolTip": "OpenGLCourseApp\\Mesh.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T13:22:15.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\main.cpp",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
-              "RelativeToolTip": "OpenGLCourseApp\\main.cpp",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAJcAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-02-03T07:31:02.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Window.h",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.h",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Window.h",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.h",
-              "RelativeToolTip": "OpenGLCourseApp\\Window.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T19:00:29.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Window.cpp",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.cpp",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Window.cpp",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Window.cpp",
-              "RelativeToolTip": "OpenGLCourseApp\\Window.cpp",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAqwI0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T19:06:31.646Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Camera.h",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.h",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Camera.h",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.h",
-              "RelativeToolTip": "OpenGLCourseApp\\Camera.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-14T08:55:26.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Camera.cpp",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.cpp",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Camera.cpp",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Camera.cpp",
-              "RelativeToolTip": "OpenGLCourseApp\\Camera.cpp",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-14T08:59:23.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Mesh.cpp",
               "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.cpp",
               "RelativeDocumentMoniker": "OpenGLCourseApp\\Mesh.cpp",
               "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Mesh.cpp",
               "RelativeToolTip": "OpenGLCourseApp\\Mesh.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T13:31:21.373Z",
+              "WhenOpened": "2024-05-17T21:00:25.273Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Shader.h",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.h",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Shader.h",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.h",
-              "RelativeToolTip": "OpenGLCourseApp\\Shader.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T18:16:33.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Shader.cpp",
-              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.cpp",
-              "RelativeDocumentMoniker": "OpenGLCourseApp\\Shader.cpp",
-              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\Shader.cpp",
-              "RelativeToolTip": "OpenGLCourseApp\\Shader.cpp",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAqwDkAAAAeAAAA",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
+              "RelativeDocumentMoniker": "OpenGLCourseApp\\main.cpp",
+              "ToolTip": "C:\\Users\\mails\\Documents\\GitHub\\OpenGLCourseApp\\OpenGLCourseApp\\main.cpp",
+              "RelativeToolTip": "OpenGLCourseApp\\main.cpp",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAD8AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T18:22:34.542Z",
+              "WhenOpened": "2024-02-03T07:31:02.275Z",
               "EditorCaption": ""
             }
           ]
