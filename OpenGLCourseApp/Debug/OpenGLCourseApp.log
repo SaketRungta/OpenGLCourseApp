@@ -1,3 +1,4 @@
 ﻿  main.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(163,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(163,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
   OpenGLCourseApp.vcxproj -> C:\Users\mails\Documents\GitHub\OpenGLCourseApp\Debug\OpenGLCourseApp.exe

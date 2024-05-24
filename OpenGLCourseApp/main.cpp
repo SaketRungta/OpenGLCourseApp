@@ -18,6 +18,7 @@
 #include "Window.h"
 #include "Camera.h"
 #include "Texture.h"
+#include "Light.h"
 
 Window mainWindow;
 
@@ -28,6 +29,8 @@ Camera camera;
 
 Texture brickTexture;
 Texture dirtTexture;
+
+Light mainLight;
 
 GLfloat deltaTime = 0.f;
 GLfloat lastTime = 0.f;
@@ -101,9 +104,13 @@ int main()
 	dirtTexture = Texture((char*)"Textures/dirt.png");
 	dirtTexture.loadTexture();
 	
+	mainLight = Light(1.f, 0.f, 0.f, 1.0f);
+
 	GLuint uniformProjection = 0;
 	GLuint uniformModel = 0;
 	GLuint uniformView = 0;
+	GLuint uniformAmbientIntensity = 0;
+	GLuint uniformAmbientColour = 0;
 
 	glm::mat4 projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.f);
 
@@ -150,6 +157,10 @@ int main()
 		uniformModel = shaderList[0].getModelLocation();
 		uniformProjection = shaderList[0].getProjectionLocation();
 		uniformView = shaderList[0].getViewLocation();
+		uniformAmbientColour = shaderList[0].getAmbientColourLocation();
+		uniformAmbientIntensity = shaderList[0].getAmbientIntensityLocation();
+
+		mainLight.useLight(uniformAmbientIntensity, uniformAmbientColour);
 
 		glm::mat4 model(1.f);
 		
