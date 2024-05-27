@@ -1,8 +1,11 @@
-﻿  Mesh.cpp
+﻿  Camera.cpp
   main.cpp
+  Material.cpp
+  Shader.cpp
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(218,94): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(218,69): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(218,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(218,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
   Generating Code...
-C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(204,94): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(204,69): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(204,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\mails\Documents\GitHub\OpenGLCourseApp\OpenGLCourseApp\main.cpp(204,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGLCourseApp.vcxproj -> C:\Users\mails\Documents\GitHub\OpenGLCourseApp\Debug\OpenGLCourseApp.exe
